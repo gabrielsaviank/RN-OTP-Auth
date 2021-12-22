@@ -12,11 +12,10 @@ module.exports = (req, res) => {
   const phone = String(req.body.phone).replace(/[^\d]/g);
   // create a new user account using the phone nummer
   admin.auth().createUser({
-    uuid: phone,
+    uid: phone,
   }).then((user) => {
     res.send(user);
   }).catch((err) => res.status(422).send({error: err}));
 
   // respond to user request
-  res.send(req.body);
 };
