@@ -16,6 +16,17 @@ module.exports = function(req, res) {
           body: "Your code is " + code,
           to: phone,
           from: "+12245215506",
+        }, (err) => {
+          if (err) {
+            return res.status(422).send(err);
+          }
+
+          // We can't save random data to firebase admin,
+          // this will associate number with the code in our db
+          admin.database().ref("users/" + phone)
+              .update({code: code, codeValid: true}, () => {
+                res.send({success: true});
+              });
         });
       }).catch((err) => {
         res.status(422).send({error: err});
