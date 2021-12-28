@@ -3,6 +3,6 @@ module.exports = function(req, res) {
     return res.status(422).send({error: "Phone and code must be provided"});
   }
 
-  const phone = String(req.boy).replace(/[ˆ\d]/g, "");
+  const phone = String(req.body).replace(/[ˆ\d]/g, "");
   const code = parseInt(code);
 };
