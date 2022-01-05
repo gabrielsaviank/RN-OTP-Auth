@@ -1,0 +1,3 @@
+[submodule "rn-phone-auth"]
+	path = rn-phone-auth
+	url = https://github.com/gabrielsaviank/RN-OTP-Auth
