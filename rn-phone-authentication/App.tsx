@@ -6,6 +6,7 @@ import SignUpForm from "./components/SignUpForm";
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text style={{marginBottom: 100, fontSize: 22, fontWeight: "bold"}}>AlleSys One Time Auth</Text>
       <SignUpForm/>
       <StatusBar style="auto" />
     </View>
